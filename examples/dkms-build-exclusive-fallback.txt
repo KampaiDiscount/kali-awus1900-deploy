@@ -1,0 +1,19 @@
+ALFA AWUS1900 deployment example
+=================================
+
+Kernel: 7.0.12+kali-amd64
+USB: 0bda:8813
+Speed: 5000 Mbit/s
+
+Building initial module realtek-rtl8814au/... for 7.0.12+kali-amd64
+Warning: dkms.conf includes a BUILD_EXCLUSIVE directive which does not
+match this kernel/arch/config. This indicates that it should not be built.
+
+Autoinstall on 7.0.12+kali-amd64 was skipped.
+
+[!] The 8814au DKMS module did not build successfully.
+[!] Falling back cleanly to the native driver.
+[OK] Loaded native rtw88_8814au.
+[+] Interface: wlan0
+[+] Bound driver: rtw88_8814au
+[OK] The active wireless stack advertises monitor mode.

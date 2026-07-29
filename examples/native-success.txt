@@ -1,0 +1,9 @@
+Expected native success indicators
+==================================
+
+Bus ... ID 0bda:8813 Realtek Semiconductor Corp. RTL8814AU
+negotiated speed: 5000 Mbit/s
+Loaded native rtw88_8814au
+Interface: wlan0
+Bound driver: rtw88_8814au
+The active wireless stack advertises monitor mode

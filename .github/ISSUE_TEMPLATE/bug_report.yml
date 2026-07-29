@@ -1,0 +1,71 @@
+name: Bug report
+description: Report a reproducible installer, driver-selection, USB, or helper issue.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Sanitize diagnostic output before submitting it. Remove client data, credentials, public IPs, unrelated serial numbers, and unnecessary MAC addresses.
+
+  - type: input
+    id: kali
+    attributes:
+      label: Kali release or branch
+      placeholder: Kali GNU/Linux Rolling
+    validations:
+      required: true
+
+  - type: input
+    id: kernel
+    attributes:
+      label: Kernel
+      placeholder: 7.0.12+kali-amd64
+    validations:
+      required: true
+
+  - type: input
+    id: platform
+    attributes:
+      label: Platform
+      placeholder: VirtualBox 7.x on Windows 11, VMware, or bare metal
+    validations:
+      required: true
+
+  - type: textarea
+    id: usb
+    attributes:
+      label: USB detection
+      description: Paste sanitized output from lsusb -d 0bda:8813 and the relevant lsusb -t line.
+      render: shell
+    validations:
+      required: true
+
+  - type: dropdown
+    id: driver
+    attributes:
+      label: Selected driver
+      options:
+        - rtw88_8814au
+        - 8814au
+        - No driver
+        - Unknown
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Sanitized diagnostic output
+      description: Include only the relevant portion of awus1900-deploy.sh diagnose or the deployment log.
+      render: shell
+    validations:
+      required: true
