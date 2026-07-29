@@ -71,12 +71,27 @@ Leave revision, manufacturer, product, serial number, and port blank unless a sp
 
 Detailed instructions: [VirtualBox USB setup](docs/virtualbox-usb.md).
 
+## Install GitHub CLI for publishing
+
+Kali's enabled repository may not contain the `gh` executable package. Install Git and GitHub CLI from GitHub's official signed APT repository:
+
+```bash
+./scripts/install-github-cli.sh
+```
+
+Then authenticate:
+
+```bash
+gh auth login
+gh auth setup-git
+```
+
 ## Quick start
 
 Clone the repository and run the deployment:
 
 ```bash
-git clone https://github.com/KampaiDiscount/kali-awus1900-deploy.git
+git clone https://github.com/OWNER/kali-awus1900-deploy.git
 cd kali-awus1900-deploy
 sudo ./awus1900-deploy.sh
 ```

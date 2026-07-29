@@ -15,34 +15,37 @@ case "$VISIBILITY" in
         ;;
 esac
 
-for command_name in git gh; do
-    command -v "$command_name" >/dev/null 2>&1 || {
-        echo "[ERROR] Missing command: ${command_name}" >&2
-        echo "Install prerequisites, then rerun:" >&2
-        echo "  sudo apt update && sudo apt install -y git gh" >&2
-        exit 1
-    }
-done
+if ! command -v git >/dev/null 2>&1 || ! command -v gh >/dev/null 2>&1; then
+    echo "[ERROR] Git and GitHub CLI are required." >&2
+    echo "Install them from GitHub's official signed repository:" >&2
+    echo "  ./scripts/install-github-cli.sh" >&2
+    exit 1
+fi
 
 if ! gh auth status >/dev/null 2>&1; then
     echo "[+] GitHub authentication is required."
     gh auth login
 fi
 
+# Configure Git to obtain HTTPS credentials from the authenticated GitHub CLI.
+gh auth setup-git
+
 LOGIN="$(gh api user --jq '.login')"
 USER_ID="$(gh api user --jq '.id')"
 DISPLAY_NAME="$(gh api user --jq '.name // .login')"
 
-if [[ -z "$(git config --get user.name || true)" ]]; then
-    git config user.name "$DISPLAY_NAME"
-fi
-
-if [[ -z "$(git config --get user.email || true)" ]]; then
-    git config user.email "${USER_ID}+${LOGIN}@users.noreply.github.com"
-fi
-
+# Repository-local configuration requires an initialized working tree.
 if [[ ! -d .git ]]; then
+    echo "[+] Initializing local Git repository..."
     git init -b main
+fi
+
+if [[ -z "$(git config --local --get user.name || true)" ]]; then
+    git config --local user.name "$DISPLAY_NAME"
+fi
+
+if [[ -z "$(git config --local --get user.email || true)" ]]; then
+    git config --local user.email "${USER_ID}+${LOGIN}@users.noreply.github.com"
 fi
 
 git add --all

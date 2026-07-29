@@ -1,5 +1,13 @@
 # Publishing to GitHub
 
+## Install the publishing prerequisites
+
+```bash
+./scripts/install-github-cli.sh
+```
+
+This installs Git and GitHub CLI from GitHub's official signed APT repository.
+
 The repository includes `publish-to-github.sh`, which:
 
 1. authenticates through GitHub CLI when necessary;

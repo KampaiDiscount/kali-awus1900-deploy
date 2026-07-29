@@ -8,6 +8,7 @@ scripts=(
     awus1900-deploy.sh
     publish-to-github.sh
     scripts/package-release.sh
+    scripts/install-github-cli.sh
     tests/static.sh
 )
 
@@ -28,6 +29,7 @@ if command -v shellcheck >/dev/null 2>&1; then
         awus1900-deploy.sh \
         publish-to-github.sh \
         scripts/package-release.sh \
+        scripts/install-github-cli.sh \
         tests/static.sh
 else
     echo "[!] shellcheck is not installed; syntax and LF checks completed."

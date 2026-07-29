@@ -2,6 +2,22 @@
 
 All notable changes to this project are documented here.
 
+## [1.1.2] - 2026-07-30
+
+### Fixed
+
+- Initialize the local Git repository before applying repository-local identity settings.
+- Configure GitHub CLI as Git's credential helper after authentication.
+- Prevent `fatal: not in a git directory` during first-time publishing.
+
+## [1.1.1] - 2026-07-30
+
+### Fixed
+
+- Added an installer for GitHub CLI's official signed APT repository.
+- Corrected publishing instructions that incorrectly assumed `gh` was available from Kali's enabled repository.
+- Updated the publishing helper to point to the bundled GitHub CLI installer.
+
 ## [1.1.0] - 2026-07-29
 
 ### Added
