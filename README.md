@@ -76,7 +76,7 @@ Detailed instructions: [VirtualBox USB setup](docs/virtualbox-usb.md).
 Clone the repository and run the deployment:
 
 ```bash
-git clone https://github.com/OWNER/kali-awus1900-deploy.git
+git clone https://github.com/KampaiDiscount/kali-awus1900-deploy.git
 cd kali-awus1900-deploy
 sudo ./awus1900-deploy.sh
 ```
