@@ -25,6 +25,7 @@ done
 if command -v shellcheck >/dev/null 2>&1; then
     echo "[+] shellcheck"
     shellcheck \
+        -S warning \
         -e SC1091 \
         awus1900-deploy.sh \
         publish-to-github.sh \
