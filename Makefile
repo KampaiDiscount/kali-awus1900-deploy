@@ -1,7 +1,7 @@
 .PHONY: check package install-gh publish-public publish-private
 
 check:
-	./tests/static.sh
+	bash ./tests/static.sh
 
 package:
 	./scripts/package-release.sh
