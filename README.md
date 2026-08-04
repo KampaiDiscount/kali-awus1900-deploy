@@ -1,8 +1,10 @@
-# Kali AWUS1900 Deploy
+# Install the ALFA AWUS1900 Driver on Kali Linux
 
-Resilient deployment and recovery tooling for the **ALFA AWUS1900**, **Realtek RTL8814AU**, and USB ID **`0bda:8813`** on Kali Linux.
+A public, one-command Kali Linux driver installer and recovery tool for the **ALFA AWUS1900** (AWUS 1900), **Realtek RTL8814AU**, and USB ID **`0bda:8813`**.
 
 The project validates USB passthrough, attempts Kali's standalone DKMS package, detects an unsupported or skipped DKMS build, rolls back cleanly, and falls back to the in-kernel `rtw88_8814au` driver. It also installs diagnostics and reversible monitor-mode helpers.
+
+Maintained by [KampaiDiscount](https://github.com/KampaiDiscount).
 
 > This project is community maintained and is not affiliated with ALFA Network, Realtek, Kali Linux, Offensive Security, Oracle, or VirtualBox.
 
@@ -71,27 +73,12 @@ Leave revision, manufacturer, product, serial number, and port blank unless a sp
 
 Detailed instructions: [VirtualBox USB setup](docs/virtualbox-usb.md).
 
-## Install GitHub CLI for publishing
-
-Kali's enabled repository may not contain the `gh` executable package. Install Git and GitHub CLI from GitHub's official signed APT repository:
-
-```bash
-./scripts/install-github-cli.sh
-```
-
-Then authenticate:
-
-```bash
-gh auth login
-gh auth setup-git
-```
-
 ## Quick start
 
 Clone the repository and run the deployment:
 
 ```bash
-git clone https://github.com/OWNER/kali-awus1900-deploy.git
+git clone https://github.com/KampaiDiscount/kali-awus1900-deploy.git
 cd kali-awus1900-deploy
 sudo ./awus1900-deploy.sh
 ```
