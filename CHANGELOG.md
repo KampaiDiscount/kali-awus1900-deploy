@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here.
 
+## Unreleased
+
+### Removed
+
+- GitHub publishing and GitHub CLI installation helpers. The repository now focuses on the public AWUS1900 driver installer and its validation tooling.
+
 ## [1.1.2] - 2026-07-30
 
 ### Fixed
