@@ -85,6 +85,14 @@ sudo ./awus1900-deploy.sh
 
 The default `auto` path attempts Kali's DKMS package and safely falls back to the native driver when the module is unsupported or skipped.
 
+Alternatively, download the standalone installer from the latest release:
+
+```bash
+curl -fLO https://github.com/KampaiDiscount/kali-awus1900-deploy/releases/latest/download/awus1900-deploy.sh
+chmod +x awus1900-deploy.sh
+sudo ./awus1900-deploy.sh
+```
+
 ## Commands
 
 ```bash
@@ -180,12 +188,6 @@ Run local static checks:
 
 ```bash
 ./tests/static.sh
-```
-
-Create a release archive:
-
-```bash
-./scripts/package-release.sh
 ```
 
 The repository enforces LF line endings for shell scripts through `.gitattributes` and `.editorconfig`.
