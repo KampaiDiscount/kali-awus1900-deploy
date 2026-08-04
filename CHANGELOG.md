@@ -2,27 +2,16 @@
 
 All notable changes to this project are documented here.
 
-## Unreleased
+## [1.1.3] - 2026-08-04
 
 ### Removed
 
-- GitHub publishing and GitHub CLI installation helpers. The repository now focuses on the public AWUS1900 driver installer and its validation tooling.
+- GitHub publishing, GitHub CLI installation, and release-packaging helpers. The repository now focuses on the public AWUS1900 driver installer and its validation tooling.
 
-## [1.1.2] - 2026-07-30
+### Changed
 
-### Fixed
-
-- Initialize the local Git repository before applying repository-local identity settings.
-- Configure GitHub CLI as Git's credential helper after authentication.
-- Prevent `fatal: not in a git directory` during first-time publishing.
-
-## [1.1.1] - 2026-07-30
-
-### Fixed
-
-- Added an installer for GitHub CLI's official signed APT repository.
-- Corrected publishing instructions that incorrectly assumed `gh` was available from Kali's enabled repository.
-- Updated the publishing helper to point to the bundled GitHub CLI installer.
+- Added a direct standalone-installer download path.
+- Corrected the public clone URL and made the project and maintainer easier to find through natural AWUS1900 driver searches.
 
 ## [1.1.0] - 2026-07-29
 
@@ -32,8 +21,6 @@ All notable changes to this project are documented here.
 - GitHub Actions static validation.
 - Issue and pull-request templates.
 - VirtualBox, troubleshooting, compatibility, and driver-selection documentation.
-- One-command GitHub publishing helper.
-- Release packaging helper.
 - Public `--version` command.
 - Explicit `auto` action alias.
 

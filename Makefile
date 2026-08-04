@@ -1,7 +1,4 @@
-.PHONY: check package
+.PHONY: check
 
 check:
 	bash ./tests/static.sh
-
-package:
-	./scripts/package-release.sh
